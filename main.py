@@ -12,6 +12,7 @@ client.remove_command("help")
 
 file=open("token.txt","r")
 line = file.readline()
+file.close()
 BotToken = str(line)
 
 async def status_task():
@@ -19,6 +20,7 @@ async def status_task():
         time.sleep(5)
         file = open("url.txt","r")
         lines = file.readline()
+        file.close()
         URL = str(lines)
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, 'html.parser')
